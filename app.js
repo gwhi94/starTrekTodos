@@ -8,7 +8,7 @@ app.controller('MainController', ['$scope', function ($scope) {
 
     $scope.todos = [
         { text: "Build todo app in angular", done: false },
-        { text: "Do christmas shopping", done: false }
+        
     ];
 
     $scope.getNumTodos = function () {
