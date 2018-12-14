@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+</head>
+
+<body ng-app="todoApp" ng-controller="MainController">
+
+    <div class="leftPanel">
+        <h1 id="mainHead" style="color: #3498db;">Hello, you have {{getNumTodos()}} tasks to complete.</h1>
+        <input class="addTodo" type="text" placeholder="I need to..." ng-model="addTodoText">
+        <button class="btn" type="submit" ng-click="addTodo();getPercentage()">Add</button>
+        <button class="btn" ng-click="completeAll();getPercentage()">Complete all</button> <button ng-click="unCompleteAll()">Un-Complete
+            all</button>
+
+        <li ng-repeat="todo in todos" style="list-style: none">
+            <h3 class="todoText done-{{todo.done}}">{{todo.text}}</h3>
+            <h5 class="todoTimestamp">{{todo.dt | date:"medium"}}</h5>
+
+            <button class="btn" ng-click="removeTodo($index);getPercentage()">Remove</button>
+            <button class="btn" ng-click="doneTodo($index);getPercentage()">Done</button>
+
+        </li>
+
+
+
+    </div>
+
+
+    <div class="rightPanel">
+        <h1 style="color:#3498db;">Completed Tasks</h1>
+        <button class="btn" ng-click="clearAll();getPercentage()">Clear all</button>
+        <h4 style="color:#e74c3c">{{percentage}} % completed</h2>
+            <div class="allCompleted" ng-repeat="completedTodos in completedTodos">
+                <show-completed info="completedTodos"></show-completed>
+            </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+    <script src="controllers/percentController.js"></script>
+    <script src="directives/completed.js"></script>
+</body>
+
+</html>

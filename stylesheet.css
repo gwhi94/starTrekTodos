@@ -1,0 +1,60 @@
+*{
+
+
+    font-family: 'Orbitron', sans-serif;
+}
+
+.done-true{
+    text-decoration: line-through !important;
+    
+}
+
+body{
+    background-image: url("img/wall.jpg");
+    background-size:cover !important;
+    
+   
+}
+
+.leftPanel{
+    width:550px !important;
+    height:100%;
+    margin-top:100px;
+    padding:15px;
+    
+}
+
+.rightPanel{
+    width:550px !important;
+    height:100% !important;
+    float: right !important;
+    right:0px;
+    top:200px;   
+    position: absolute;
+    text-align: right;
+    padding:15px;
+    
+    
+}
+
+.todoText{
+    color: #e67e22;
+    margin-bottom: 2px;
+   
+}
+.todoTimestamp{
+    color:white;
+    margin-top:0px;
+}
+.todoTextDone{
+    color: #2ecc71;
+    margin-bottom: 2px;  
+}
+.todoTimestampDone{
+   color:white;
+   margin-top:0px;
+       
+}
+
+
+
